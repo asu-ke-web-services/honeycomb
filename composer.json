@@ -1,0 +1,14 @@
+{
+    "name": "gios-asu/honeycomb",
+    "description": "A framework for WordPress plugins",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The Global Institute of Sustainability",
+            "email": "giosweb@asu.edu"
+        }
+    ],
+    "autoload": {
+        "classmap" : [ "src/" ]
+    }
+}
