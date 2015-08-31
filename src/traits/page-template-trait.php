@@ -1,6 +1,6 @@
 <?php
 
-namespace Honeycomb\Traits\Page_Template_Trait;
+namespace Honeycomb\Traits;
 
 trait Page_Template_Trait {
   public function load_dependencies() {
