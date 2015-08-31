@@ -2,7 +2,7 @@
 
 namespace Honeycomb\Traits\Page_Template_Trait;
 
-trait Page Template_Trait {
+trait Page_Template_Trait {
   public function load_dependencies() {
     // No dependencies for now
     if ( method_exists( $this, 'load_additional_dependencies' ) ) {
