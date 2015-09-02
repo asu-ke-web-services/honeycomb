@@ -4,6 +4,7 @@ namespace Honeycomb\Facades;
 
 use Nectary\Facades\Rss_Facade;
 
+// TODO remove dependency on Nectary
 class Wordpress_Rss_Facade extends Rss_Facade {
   function load_dependencies() {
     if ( function_exists( 'fetch_feed' ) ) {
