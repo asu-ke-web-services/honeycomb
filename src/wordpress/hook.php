@@ -3,12 +3,12 @@
 namespace Honeycomb\Wordpress;
 
 /**
- * Base Regestrar
+ * Hook class
  *
  * Abstract class that all functionality should extend so that all functionality
  * has a common entry point
  */
-class Hook {
+abstract class Hook {
   protected $actions    = array();
   protected $filters    = array();
   protected $shortcodes = array();

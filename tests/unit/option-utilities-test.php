@@ -4,6 +4,10 @@ namespace Honeycomb\Tests;
 
 use Honeycomb\Utilities\Option_Utilities;
 
+/**
+ * @group utility
+ * @group option
+ */
 class Option_Utilities_Test extends \PHPUnit_Framework_TestCase {
   function setUp() {
     update_option(
