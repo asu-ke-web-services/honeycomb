@@ -11,6 +11,9 @@ class Wordpress_Feed_Test extends \PHPUnit_Framework_TestCase {
   function setUp() {
     $this->url     = 'https://news.wp.prod.gios.asu.edu/tag/board-letter/feed/';
     $this->bad_url = 'invalid://news.wp.prod.gios.asu.nope/tag/board-letter/feed/';
+
+    // Disable https checking for testing
+    add_filter( 'https_ssl_verify', '__return_false' );
   }
 
   function test_returns_rss_feed() {
