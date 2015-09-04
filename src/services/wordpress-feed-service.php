@@ -20,7 +20,7 @@ class Wordpress_Feed_Service extends Feed_Service {
       if ( ! is_wp_error( $feed ) ) {
         return $feed;
       } else {
-        throw new \Exception( 'Could not load WordPress feed' );
+        throw new \Exception( 'Could not load WordPress feed: ' . $feed->get_error_message() );
       }
     } else {
       throw new \Exception( 'Required file missing to import feed' );
