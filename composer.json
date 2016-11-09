@@ -10,5 +10,18 @@
     ],
     "autoload": {
         "classmap" : [ "src/" ]
+    },
+    "repositories": [
+        {
+            "url": "https://github.com/gios-asu/nectary.git",
+            "type": "git"
+        }
+    ],
+    "require": {
+        "gios-asu/nectary": "^0.1.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*",
+        "satooshi/php-coveralls": ">=0.6"
     }
 }
