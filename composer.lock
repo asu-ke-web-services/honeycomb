@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ebd0af26461a4b97b9c7fdf26b8ca0e3",
-    "content-hash": "a7ff58051a8dbbe9041e07c4e4e8707f",
+    "hash": "3997922ef1f92dd998c40b9cfa433280",
+    "content-hash": "e92ffcc767c6ad4832792fb95f2bccdf",
     "packages": [
         {
             "name": "coduo/php-humanizer",
@@ -70,11 +70,11 @@
         },
         {
             "name": "gios-asu/nectary",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gios-asu/nectary.git",
-                "reference": "c6f3b96bb137f507f2a68f9bc930754ac5a9f3d5"
+                "reference": "e46ab02826aaf8f10af4614305dafe0efb878122"
             },
             "require": {
                 "coduo/php-humanizer": ">=2.0.0-beta",
@@ -112,7 +112,7 @@
                 }
             ],
             "description": "A simple PHP framework that is not tied to a web interface",
-            "time": "2016-11-10 17:42:47"
+            "time": "2016-11-15 20:46:34"
         },
         {
             "name": "symfony/config",
