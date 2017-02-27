@@ -2,6 +2,11 @@
 
 namespace Honeycomb\Traits;
 
+/**
+ * Page Template Trait
+ *
+ * @see http://www.wpexplorer.com/wordpress-page-templates-plugin/
+ */
 trait Page_Template_Trait {
   public function load_dependencies() {
     // No dependencies for now
@@ -11,13 +16,17 @@ trait Page_Template_Trait {
   }
 
   public function define_hooks() {
-    $this->add_filter(
-        'page_attributes_dropdown_pages_args',
-        $this,
-        'page_attributes_dropdown_pages_args'
-    );
     $this->add_filter( 'wp_insert_post_data', $this, 'wp_insert_post_data' );
     $this->add_filter( 'template_include', $this, 'template_include' );
+
+    // Add a filter to the attributes metabox to inject template into the cache.
+    if ( version_compare( floatval( get_bloginfo( 'version' ) ), '4.7', '<' ) ) {
+      // 4.6 and older
+      $this->add_filter( 'page_attributes_dropdown_pages_args', $this, 'page_attributes_dropdown_pages_args' );
+    } else {
+      // Add a filter to the wp 4.7 version attributes metabox
+      $this->add_filter( 'theme_page_templates', $this, 'add_new_template' );
+    }
 
     if ( method_exists( $this, 'define_additional_hooks' ) ) {
       $this->define_additional_hooks();
@@ -27,6 +36,16 @@ trait Page_Template_Trait {
     $this->register_project_templates();
     return $atts;
   }
+
+  /**
+   * Adds templates to the page dropdown for WordPress v4.7+
+   *
+   */
+  public function add_new_template( $posts_templates ) {
+    $posts_templates = array_merge( $posts_templates, $this->templates );
+    return $posts_templates;
+  }
+
   public function wp_insert_post_data( $atts ) {
     $this->register_project_templates();
     return $atts;
@@ -87,6 +106,8 @@ trait Page_Template_Trait {
 
     // Add the modified cache to allow WordPress to pick it up for listing
     // available templates
-    wp_cache_add( $cache_key, $templates, 'themes', 1800 );
+    if ( ! wp_cache_add( $cache_key, $templates, 'themes', 1800 ) ) {
+      error_log( 'Error adding page template wp cache '.$cache_key );
+    }
   }
 }
