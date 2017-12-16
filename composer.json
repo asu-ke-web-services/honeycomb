@@ -10,7 +10,14 @@
         }
     ],
     "autoload": {
-        "classmap" : [ "src/" ]
+        "psr-4": {
+            "Honeycomb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Honeycomb\\Tests\\": "tests/"
+        }
     },
     "repositories": [
         {
