@@ -21,12 +21,24 @@ abstract class Hook {
 		// Do nothing by default.
 	}
 
-	protected function __construct( $plugin_slug, $version = '0.1' ) {
+	/**
+	 * Hook constructor.
+	 *
+	 * @param string $plugin_slug
+	 * @param string $version
+	 */
+	protected function __construct( string $plugin_slug, string $version = '0.1' ) {
 		$this->plugin_slug = $plugin_slug;
 		$this->version     = $version;
 	}
 
-	public function add_action( $hook, $component, $callback, $priority = 10 ) {
+	/**
+	 * @param string $hook
+	 * @param Object $component
+	 * @param string $callback
+	 * @param int    $priority
+	 */
+	public function add_action( string $hook, Object $component, string $callback, int $priority = 10 ) {
 		$this->actions = $this->add(
 				$this->actions,
 				$hook,
@@ -36,7 +48,13 @@ abstract class Hook {
 		);
 	}
 
-	public function add_filter( $hook, $component, $callback, $priority = 10 ) {
+	/**
+	 * @param string $hook
+	 * @param Object $component
+	 * @param string $callback
+	 * @param int    $priority
+	 */
+	public function add_filter( string $hook, Object $component, string $callback, int $priority = 10 ) {
 		$this->filters = $this->add(
 				$this->filters,
 				$hook,
@@ -46,7 +64,12 @@ abstract class Hook {
 		);
 	}
 
-	public function add_shortcode( $shortCodeName, $component, $callback ) {
+	/**
+	 * @param string $shortCodeName
+	 * @param Object $component
+	 * @param string $callback
+	 */
+	public function add_shortcode( string $shortCodeName, Object $component, string $callback ) {
 		$this->shortcodes = $this->add(
 				$this->shortcodes,
 				$shortCodeName,
@@ -55,7 +78,15 @@ abstract class Hook {
 		);
 	}
 
-	private function add( $hooks, $hook, $component, $callback, $priority = 10 ) {
+	/**
+	 * @param array  $hooks
+	 * @param string $hook
+	 * @param Object $component
+	 * @param string $callback
+	 * @param int    $priority
+	 * @return array
+	 */
+	private function add( array $hooks, string $hook, Object $component, string $callback, int $priority = 10 ) {
 		$hooks[] = array(
 			'hook'      => $hook,
 			'component' => $component,

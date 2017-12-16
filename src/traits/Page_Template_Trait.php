@@ -40,17 +40,27 @@ trait Page_Template_Trait {
 	/**
 	 * Adds templates to the page dropdown for WordPress v4.7+
 	 *
+	 * @param  array $posts_templates
+	 * @return array
 	 */
-	public function add_new_template( $posts_templates ) {
+	public function add_new_template( array $posts_templates ) : array {
 		$posts_templates = array_merge( $posts_templates, $this->templates );
 		return $posts_templates;
 	}
 
-	public function wp_insert_post_data( $atts ) {
+	/**
+	 * @param  array $atts (optional)
+	 * @return array
+	 */
+	public function wp_insert_post_data( $atts ) : array {
 		$this->register_project_templates();
 		return $atts;
 	}
 
+	/**
+	 * @param $template
+	 * @return string
+	 */
 	public function template_include( $template ) {
 		global $post;
 		if ( $post === null ) {
@@ -83,7 +93,7 @@ trait Page_Template_Trait {
 	/**
 	 * Register project templates
 	 */
-	protected function register_project_templates () {
+	protected function register_project_templates() {
 		// Create the key used for the themes cache
 		$cache_key = 'page_templates-' . md5(
 				get_theme_root() . '/' . get_stylesheet()

@@ -7,6 +7,10 @@ use Nectary\Models\Rss_Feed;
 
 // TODO remove dependency on Nectary
 class Wordpress_Feed_Service extends Feed_Service {
+	/**
+	 * @param $url
+	 * @return Rss_Feed
+	 */
 	public function get_feed( $url ) : Rss_Feed {
 		return new Rss_Feed( $url, array( $this, 'fetch_feed' ) );
 	}
