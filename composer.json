@@ -2,6 +2,7 @@
     "name": "gios-asu/honeycomb",
     "description": "A framework for WordPress plugins",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "The Global Institute of Sustainability",
@@ -9,7 +10,14 @@
         }
     ],
     "autoload": {
-        "classmap" : [ "src/" ]
+        "psr-4": {
+            "Honeycomb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Honeycomb\\Tests\\": "tests/"
+        }
     },
     "repositories": [
         {
@@ -18,10 +26,16 @@
         }
     ],
     "require": {
-        "gios-asu/nectary": ">=0.2.2"
+        "php": ">=7.0",
+        "gios-asu/nectary": "^1.0",
+        "roave/security-advisories": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*",
-        "satooshi/php-coveralls": ">=0.6"
+        "phpunit/phpunit": "^6.0",
+        "satooshi/php-coveralls": "^2.0",
+        "squizlabs/php_codesniffer": "^2.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+        "wp-coding-standards/wpcs": "~0.14.0",
+        "wimg/php-compatibility": "*"
     }
 }
