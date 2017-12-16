@@ -37,6 +37,7 @@ before_script:
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage/clover.xml
+  - vendor/bin/phpcs -s --standard=phpcs.xml ./src
 
 after_script:
   - php vendor/bin/coveralls -v
