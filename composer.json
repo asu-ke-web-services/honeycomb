@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "gios-asu/nectary": "dev-prod",
+        "gios-asu/nectary": "^1.0",
         "roave/security-advisories": "dev-master"
     },
     "require-dev": {
@@ -37,7 +37,5 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
         "wp-coding-standards/wpcs": "~0.14.0",
         "wimg/php-compatibility": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

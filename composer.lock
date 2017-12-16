@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "921bfdfcf0bf8aa745232206a7f0e246",
+    "content-hash": "894da7978ec58dbf3ac8a52102e9ceca",
     "packages": [
         {
             "name": "coduo/php-humanizer",
@@ -69,15 +69,15 @@
         },
         {
             "name": "gios-asu/nectary",
-            "version": "dev-prod",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gios-asu/nectary.git",
-                "reference": "8ac16f80b1437aeb0bd5aad7c7155e9f9fd95e6e"
+                "reference": "ddb81d09152e3c5b9446db170599a229468bb2d6"
             },
             "require": {
                 "coduo/php-humanizer": ">=2.0.0-beta",
-                "josegonzalez/dotenv": "dev-master",
+                "josegonzalez/dotenv": "~3.2.0",
                 "php": ">=7.0",
                 "roave/security-advisories": "dev-master",
                 "xamin/handlebars.php": "0.10.3"
@@ -117,20 +117,20 @@
                 }
             ],
             "description": "A simple PHP framework that is not tied to a web interface",
-            "time": "2017-12-15T23:31:08+00:00"
+            "time": "2017-12-16T01:14:04+00:00"
         },
         {
             "name": "josegonzalez/dotenv",
-            "version": "dev-master",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/josegonzalez/php-dotenv.git",
-                "reference": "bc1677b827829f1e1db4a55b8283b4b836617499"
+                "reference": "f19174d9d7213a6c20e8e5e268aa7dd042d821ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/bc1677b827829f1e1db4a55b8283b4b836617499",
-                "reference": "bc1677b827829f1e1db4a55b8283b4b836617499",
+                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/f19174d9d7213a6c20e8e5e268aa7dd042d821ca",
+                "reference": "f19174d9d7213a6c20e8e5e268aa7dd042d821ca",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "dotenv",
                 "php"
             ],
-            "time": "2017-11-27T14:55:32+00:00"
+            "time": "2017-09-19T15:49:58+00:00"
         },
         {
             "name": "m1/env",
@@ -2947,12 +2947,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "gios-asu/nectary": 20,
         "roave/security-advisories": 20
     },
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.0"
