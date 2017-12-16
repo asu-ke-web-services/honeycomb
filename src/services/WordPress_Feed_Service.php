@@ -6,7 +6,7 @@ use Nectary\Services\Feed_Service;
 use Nectary\Models\Rss_Feed;
 
 // TODO remove dependency on Nectary
-class Wordpress_Feed_Service extends Feed_Service {
+class WordPress_Feed_Service extends Feed_Service {
 	/**
 	 * @param $url
 	 * @return Rss_Feed

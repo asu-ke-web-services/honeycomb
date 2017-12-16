@@ -10,8 +10,8 @@ class Register {
 	 * @param array $classes
 	 */
 	public function register( array $classes ) {
-		foreach( $classes as $class_name ) {
-			( new $class_name )->run();
+		foreach ( $classes as $class_name ) {
+			( new $class_name() )->run();
 		}
 	}
 }

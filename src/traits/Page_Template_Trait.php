@@ -67,11 +67,13 @@ trait Page_Template_Trait {
 			return $template;
 		}
 
-		if ( ! isset( $this->templates[ get_post_meta(
+		if ( ! isset(
+			$this->templates[ get_post_meta(
 				$post->ID,
 				'_wp_page_template',
 				true
-		) ] ) ) {
+			) ]
+		) ) {
 			return $template;
 		}
 
@@ -96,7 +98,7 @@ trait Page_Template_Trait {
 	protected function register_project_templates() {
 		// Create the key used for the themes cache
 		$cache_key = 'page_templates-' . md5(
-				get_theme_root() . '/' . get_stylesheet()
+			get_theme_root() . '/' . get_stylesheet()
 		);
 
 		// Retrieve the cache list
@@ -116,7 +118,7 @@ trait Page_Template_Trait {
 		// Add the modified cache to allow WordPress to pick it up for listing
 		// available templates
 		if ( ! wp_cache_add( $cache_key, $templates, 'themes', 1800 ) ) {
-			error_log( 'Error adding page template wp cache '.$cache_key );
+			error_log( 'Error adding page template wp cache ' . $cache_key );
 		}
 	}
 }

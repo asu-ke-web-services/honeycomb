@@ -40,11 +40,11 @@ abstract class Hook {
 	 */
 	public function add_action( string $hook, Object $component, string $callback, int $priority = 10 ) {
 		$this->actions = $this->add(
-				$this->actions,
-				$hook,
-				$component,
-				$callback,
-				$priority
+			$this->actions,
+			$hook,
+			$component,
+			$callback,
+			$priority
 		);
 	}
 
@@ -56,11 +56,11 @@ abstract class Hook {
 	 */
 	public function add_filter( string $hook, Object $component, string $callback, int $priority = 10 ) {
 		$this->filters = $this->add(
-				$this->filters,
-				$hook,
-				$component,
-				$callback,
-				$priority
+			$this->filters,
+			$hook,
+			$component,
+			$callback,
+			$priority
 		);
 	}
 
@@ -71,10 +71,10 @@ abstract class Hook {
 	 */
 	public function add_shortcode( string $shortCodeName, Object $component, string $callback ) {
 		$this->shortcodes = $this->add(
-				$this->shortcodes,
-				$shortCodeName,
-				$component,
-				$callback
+			$this->shortcodes,
+			$shortCodeName,
+			$component,
+			$callback
 		);
 	}
 
@@ -100,22 +100,22 @@ abstract class Hook {
 	public function run() {
 		foreach ( $this->filters as $hook ) {
 			add_filter(
-					$hook['hook'],
-					array( $hook['component'], $hook['callback'] )
+				$hook['hook'],
+				array( $hook['component'], $hook['callback'] )
 			);
 		}
 
 		foreach ( $this->actions as $hook ) {
 			add_action(
-					$hook['hook'],
-					array( $hook['component'], $hook['callback'] ), $hook['priority']
+				$hook['hook'],
+				array( $hook['component'], $hook['callback'] ), $hook['priority']
 			);
 		}
 
 		foreach ( $this->shortcodes as $hook ) {
 			add_shortcode(
-					$hook['hook'],
-					array( $hook['component'], $hook['callback'] )
+				$hook['hook'],
+				array( $hook['component'], $hook['callback'] )
 			);
 		}
 	}
