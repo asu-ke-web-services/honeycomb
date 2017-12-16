@@ -20,7 +20,7 @@ trait Page_Template_Trait {
 		$this->add_filter( 'template_include', $this, 'template_include' );
 
 		// Add a filter to the attributes metabox to inject template into the cache.
-		if ( version_compare( floatval( get_bloginfo( 'version' ) ), '4.7', '<' ) ) {
+		if ( version_compare( (float) get_bloginfo( 'version' ), '4.7', '<' ) ) {
 			// 4.6 and older
 			$this->add_filter( 'page_attributes_dropdown_pages_args', $this, 'page_attributes_dropdown_pages_args' );
 		} else {
@@ -74,9 +74,8 @@ trait Page_Template_Trait {
 
 		if ( file_exists( $file ) ) {
 			return $file;
-		} else {
-			echo $file;
 		}
+		echo $file;
 
 		return $template;
 	}

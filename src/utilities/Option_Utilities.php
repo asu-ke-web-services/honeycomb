@@ -18,13 +18,13 @@ class Option_Utilities {
 
 		if ( $value === null && ! self::key_exists( $namespace, $key ) ) {
 			return $default;
-		} else {
-			return $value;
 		}
+
+		return $value;
 	}
 
 	public static function key_exists( $namespace, $key ) {
 		$options = get_option( $namespace );
-		return is_array( $options ) && array_key_exists( $key, $options );
+		return \is_array( $options ) && array_key_exists( $key, $options );
 	}
 }
